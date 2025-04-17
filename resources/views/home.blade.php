@@ -36,26 +36,6 @@
             <span></span>
         </button>
         <div class="nav-container">
-                         <!-- Sidebar Toggle Checkbox -->
-    <input type="checkbox" id="sidebar-toggle">
-    <!-- Sidebar -->
-    <div class="overlay"></div>
-    <aside id="sidebar">
-        <label for="sidebar-toggle" class="close-btn">&times;</label>
-        <div class="menu">
-            <div class="detal">
-                <br><a href="{{route('login')}}" style="text-decoration: none;"><i class="fa-solid fa-user-injured"></i>&nbsp;<p>service Provider</p></a><br>
-                <a href="{{url('/electrical')}}" style="text-decoration: none;"> <i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;<p>Electrical Service</p></a><br>
-                <a href="{{url('/carpentry')}}" style="text-decoration: none;"> <i class="fa-solid fa-hammer"></i>&nbsp;<p>Carpentry Service</p></a><br>
-                <a href="{{url('/painting')}}" style="text-decoration: none;"> <i class="fa-solid fa-brush"></i>&nbsp;<p>Painting Service</p></a><br>
-                <a href="{{url('/plumbing')}}" style="text-decoration: none;"> <i class="fa-solid fa-faucet"></i>&nbsp;<p>Plumbing Service</p></a><br>
-                <a href="{{url('/airconditions')}}" style="text-decoration: none;"><img width="24" height="24" src="https://img.icons8.com/material/24/ffffff/air-conditioner.png" alt="air-conditioner"/>
-                    &nbsp;<p style="font-size: 13px; font-weight:bold">Air Conditioning Service</p></a><br>
-                <a href="{{url('/appliance')}}" style="text-decoration: none;"><img width="24" height="24" src="https://img.icons8.com/ios-filled/50/ffffff/fridge.png" alt="fridge"/>
-                    &nbsp;<p>Appliance Service</p></a><br>
-            </div>
-        </div>
-    </aside>
             <nav>
                 <ul>
                     <li><a href="{{url('/home')}}">Home</a></li>
@@ -64,7 +44,6 @@
                     <li><a href="#contact">Contact Us</a></li>
                     <li><a href="{{route('login')}}">Become a Pro</a></li>
                     <li><a href="{{url('/adminlogin')}}">Admin Panel</a></li>
-                    <li><label for="sidebar-toggle" class="icon-menu">&#9776;</label></li>
                 </ul>
             </nav>
         </div>
@@ -74,12 +53,12 @@
     <!-- Start Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>
-                <span class="highlight">Your</span>Trusted  <span class="highlight">place</span> to<br>
-                Find <span class="highlight">Skilled</span>&nbsp;Providers
+            <h1 style="font-size:40px;">
+                <span class="highlight">There</span> are professionals<br>
+                 Ready to help <span class="highlight">You</span>
             </h1>
-            <p>We're here to make getting service fast, easy, and reliable with reasonable price, thinking about our clients.<br>
-                Let's get started!</p>
+            <p>The easiy to get service with better price and quality<br>
+                Always,think about your client</p>
 
         @if(session('error'))
          <p style="color: black">{{'*'. session('error') }}</p>
