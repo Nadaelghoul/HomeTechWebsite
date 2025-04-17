@@ -25,16 +25,16 @@
     <header>
         <div class="container-header">
             <a class="logo-link" href="{{url('/home')}}">
-            <div class="container-logo">
-                <div class="imag-logo">
-                    <img src="{{ asset('images/logo-removebg-preview.png') }}" alt="logo image">
+                <div class="logo-container" style="margin-left:-12px;">
+                    <div class="logo-img">
+                        <img src="{{ asset('images/logo-removebg-preview.png') }}" alt=" Logo">
+                    </div>
+                    <div class="logo-text"  style="margin-left:-20px;">
+                        <span style="font-size:20px;">Home</span>
+                        <span style="font-size:22px;margin-top:-5px;">Tech</span>
+                    </div>
                 </div>
-                <div class="text-logo">
-                    <span>Local</span>
-                    <span>Service</span>
-                </div>
-            </div>
-            </a>
+                </a>
             <div class="title-service">
                 <h1>Air Conditioning Service</h1>
             </div>
@@ -55,7 +55,7 @@
                             summer season.</p>
                         <div class="reguest-button">
                             <h4><i class="fa-solid fa-dollar-sign"></i> 50-100 / <span>visit</span></h4>
-                            <a href="{{ url('/servicerequest') }}?service={{ urlencode('Air Conditioning') }}&title={{ urlencode('Air conditioning cleaning & summer maintenance') }}&price={{ urlencode('50-100 $') }}" target="_blank">Register</a>
+                            <a href="{{ url('/servicerequest') }}?service={{ urlencode('Air Conditioning Service') }}&title={{ urlencode('Air conditioning cleaning & summer maintenance') }}&price={{ urlencode('50-100 $') }}" target="_blank">Register</a>
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                             problems</p>
                         <div class="reguest-button">
                             <h4><i class="fa-solid fa-dollar-sign"></i> 175-200 / <span>visit</span> </h4>
-                            <a href="{{ url('/servicerequest') }}?service={{ urlencode('Air Conditioning') }}&title={{ urlencode('Air conditioning inspection and inspection') }}&price={{ urlencode('175-200 $') }}" target="_blank">Register</a>
+                            <a href="{{ url('/servicerequest') }}?service={{ urlencode('Air Conditioning Service') }}&title={{ urlencode('Air conditioning inspection') }}&price={{ urlencode('175-200 $') }}" target="_blank">Register</a>
                         </div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                             conditioning</p>
                         <div class="reguest-button">
                             <h4><i class="fa-solid fa-dollar-sign"></i> 100-125 / <span>visit</span> </h4>
-                            <a href="{{ url('/servicerequest') }}?service={{ urlencode('Air Conditioning') }}&title={{ urlencode('Charging Freon air conditioning') }}&price={{ urlencode('100-125 $') }}" target="_blank">Register</a>
+                            <a href="{{ url('/servicerequest') }}?service={{ urlencode('Air Conditioning Service') }}&title={{ urlencode('Charging Freon air conditioning') }}&price={{ urlencode('100-125 $') }}" target="_blank">Register</a>
                         </div>
                     </div>
                 </div>
@@ -104,7 +104,7 @@
                         </p>
                         <div class="reguest-button">
                             <h4><i class="fa-solid fa-dollar-sign"></i> 200-250 / <span>visit</span> </h4>
-                            <a href="{{ url('/servicerequest') }}?service={{ urlencode('Air Conditioning') }}&title={{ urlencode('Dismantling and installing Air conditioning') }}&price={{ urlencode('200-250 $') }}" target="_blank">Register</a>
+                            <a href="{{ url('/servicerequest') }}?service={{ urlencode('Air Conditioning Service') }}&title={{ urlencode('Dismantling and installing Air conditioning') }}&price={{ urlencode('200-250 $') }}" target="_blank">Register</a>
                         </div>
                     </div>
                 </div>
@@ -141,7 +141,7 @@
                             <span><i class="fa-solid fa-star"></i></span>
                         </div>
                     </div>
-                    <a href="{{ route('topProviderRequest.create') }}?service_provider={{ urlencode('Ali Mostafa Zedan') }}&service={{ urlencode('Air Conditioning') }}&title={{ urlencode('Air conditioning cleaning & summer maintenance') }}&price={{ urlencode('50-100 $') }}"
+                    <a href="{{ route('topProviderRequest.create') }}?service_provider={{ urlencode('Ali Mostafa Zedan') }}&service={{ urlencode('Air Conditioning Service') }}&title={{ urlencode('Air conditioning cleaning & summer maintenance') }}&price={{ urlencode('50-100 $') }}"
                         class="click-btn" target="_blank">Request</a>
                 </div>
 
@@ -169,7 +169,7 @@
                             <span><i class="fa-solid fa-star-half-stroke"></i></span>
                         </div>
                     </div>
-                    <a href="{{ route('topProviderRequest.create') }}?service_provider={{ urlencode('Youssef Soliman Fouad') }}&service={{ urlencode('Air Conditioning') }}&title={{ urlencode('Charging Freon air conditioning') }}&price={{ urlencode('100-125 $') }}"class="click-btn" target="_blank">Request</a>
+                    <a href="{{ route('topProviderRequest.create') }}?service_provider={{ urlencode('Youssef Soliman Fouad') }}&service={{ urlencode('Air Conditioning Service') }}&title={{ urlencode('Charging Freon air conditioning') }}&price={{ urlencode('100-125 $') }}"class="click-btn" target="_blank">Request</a>
 
                 </div>
 
@@ -197,7 +197,7 @@
                             <span><i class="fa-solid fa-star-half-stroke"></i></span>
                         </div>
                     </div>
-                    <a href="{{ route('topProviderRequest.create') }}?service_provider={{ urlencode('Mohamed Sami Youssef') }}&service={{ urlencode('Air Conditioning') }}&title={{ urlencode('Dismantling and installing Air conditioning') }}&price={{ urlencode('200-250 $') }}"class="click-btn" target="_blank">Request</a>
+                    <a href="{{ route('topProviderRequest.create') }}?service_provider={{ urlencode('Mohamed Sami Youssef') }}&service={{ urlencode('Air Conditioning Service') }}&title={{ urlencode('Dismantling and installing Air conditioning') }}&price={{ urlencode('200-250 $') }}"class="click-btn" target="_blank">Request</a>
 
                 </div>
 
@@ -225,7 +225,7 @@
                             <span><i class="fa-solid fa-star-half-stroke"></i></span>
                         </div>
                     </div>
-                    <a href="{{ route('topProviderRequest.create') }}?service_provider={{ urlencode('Khaled Omar Ibrahiem') }}&service={{ urlencode('Air Conditioning') }}&title={{ urlencode('Air conditioning inspection') }}&price={{ urlencode('175-200 $') }}"class="click-btn" target="_blank">Request</a>
+                    <a href="{{ route('topProviderRequest.create') }}?service_provider={{ urlencode('Khaled Omar Ibrahiem') }}&service={{ urlencode('Air Conditioning Service') }}&title={{ urlencode('Air conditioning inspection') }}&price={{ urlencode('175-200 $') }}"class="click-btn" target="_blank">Request</a>
 
                 </div>
 
@@ -253,7 +253,7 @@
                             <span><i class="fa-regular fa-star"></i></span>
                         </div>
                     </div>
-                    <a href="{{ route('topProviderRequest.create') }}?service_provider={{ urlencode('Hassan Waleed Kamal') }}&service={{ urlencode('Air Conditioning') }}&title={{ urlencode('Dismantling and installing Air conditioning') }}&price={{ urlencode('200-250 $') }}"class="click-btn" target="_blank">Request</a>
+                    <a href="{{ route('topProviderRequest.create') }}?service_provider={{ urlencode('Hassan Waleed Kamal') }}&service={{ urlencode('Air Conditioning Service') }}&title={{ urlencode('Dismantling and installing Air conditioning') }}&price={{ urlencode('200-250 $') }}"class="click-btn" target="_blank">Request</a>
 
                 </div>
 
@@ -281,7 +281,7 @@
                             <span><i class="fa-regular fa-star"></i></span>
                         </div>
                     </div>
-                    <a href="{{ route('topProviderRequest.create') }}?service_provider={{ urlencode('Marawan Saead Zaher') }}&service={{ urlencode('Air Conditioning') }}&title={{ urlencode('Air conditioning inspection') }}&price={{ urlencode('175-200 $') }}"class="click-btn" target="_blank">Request</a>
+                    <a href="{{ route('topProviderRequest.create') }}?service_provider={{ urlencode('Marawan Saead Zaher') }}&service={{ urlencode('Air Conditioning Service') }}&title={{ urlencode('Air conditioning inspection') }}&price={{ urlencode('175-200 $') }}"class="click-btn" target="_blank">Request</a>
 
                 </div>
             </div>

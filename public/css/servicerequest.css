@@ -68,34 +68,34 @@ header {
 .logo-link{
     text-decoration: none;
 }
-
-.container-logo {
+.logo-container {
     display: flex;
     align-items: center;
     gap: 1rem;
     position: relative;
+    padding: .4rem 0 0 2rem;
     z-index: 15;
 }
 
-.imag-logo img {
-    width: 50px;
-    height: 50px;
+
+.logo-img img {
+    width: 65px;
+    height: 65px;
     object-fit: contain;
 }
 
-.text-logo {
+.logo-text {
     display: flex;
     flex-direction: column;
-    line-height: 1.2;
 }
 
-.text-logo span {
-    font-size: 1.1rem;
-    font-weight: 600;
+.logo-text span {
+    font-size: 1.2rem;
+    font-weight: bold;
     color: var(--color-secondary);
 }
 
-.text-logo span:first-child {
+.logo-text span:first-letter {
     color: var(--color-primary);
 }
 

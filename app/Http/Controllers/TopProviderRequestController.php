@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\TopProviderRequest;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\RequestAcceptedMail;
-use App\Mail\RequestRefucedMail;
+use App\Mail\TopProviderRequestRefused;
 
 class TopProviderRequestController extends Controller
 {
@@ -22,17 +22,19 @@ class TopProviderRequestController extends Controller
         $validatedData = $request->validate([
             'name' => ['required','string','max:255','regex:/^[\p{L}\s]+$/u'],
             'email' => ['required','string','email','max:255' ],
-            'mobile' => 'required|digits_between:8,15',
+            'mobile' => ['required', 'regex:/^01[0-9]{9}$/'],
             'area' => 'required|in:Al Manakh District,Al Zohour District,Al-talatini District,South District,East Port Said District,Al-dowahi District,West District',
             'Problem_Address'=>'required|string|max:255',
             'execution_day' => 'required|date|after_or_equal:today',
-            'requirements'=>'nullable|string|max:255',
+            'requirements' => ['nullable', 'regex:/^[\pL\s]+$/u', 'max:255'],
             'service'=>'string',
             'skill'=>'string',
             'price'=>'string',
             'service_provider'=>'string',
             'request_key'=>'string',
             'status'=>'in:pending, accepted, expired,refuced',
+        ],[
+            'execution_day.after_or_equal' => 'You cannot select a date before today.',
         ]);
         $validatedData['request_key'] = strtoupper(substr(md5(uniqid()), 0, 8));
         $provider = Provider::where('name', $validatedData['service_provider'])->first();
@@ -66,10 +68,10 @@ class TopProviderRequestController extends Controller
 }
 
 
-public function refuceRequest($requestKey)
+public function refuse($requestKey)
     {
     $topproviderrequest = TopProviderRequest::where('request_key', $requestKey)
-        ->where('status', 'pending') // Ensures only unaccepted requests can be accepted
+        ->where('status', 'pending')
         ->firstOrFail();
 
     $provider = auth('provider')->user();
@@ -77,11 +79,11 @@ public function refuceRequest($requestKey)
 
     // Assign request to the provider
     $topproviderrequest->update([
-        'status' => 'refuced' // Updating status to accepted
+        'status' => 'refuced'
     ]);
 
       // Send email notification to the user
-    Mail::to($topproviderrequest->email)->send(new RequestRefucedMail($topproviderrequest, $provider, $providerProfile));
+    Mail::to($topproviderrequest->email)->send(new TopProviderRequestRefused($topproviderrequest, $provider, $providerProfile));
 
     return redirect()->back()->with('success', 'You have refuced the request.');
 }

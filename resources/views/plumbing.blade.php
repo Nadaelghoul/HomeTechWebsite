@@ -25,16 +25,16 @@
     <header>
         <div class="container-header">
             <a class="logo-link" href="{{url('/home')}}">
-            <div class="container-logo">
-                <div class="imag-logo">
-                    <img src="{{ asset('images/logo-removebg-preview.png') }}" alt="logo image">
+                <div class="logo-container" style="margin-left:-12px;">
+                    <div class="logo-img">
+                        <img src="{{ asset('images/logo-removebg-preview.png') }}" alt=" Logo">
+                    </div>
+                    <div class="logo-text"  style="margin-left:-20px;">
+                        <span style="font-size:20px;">Home</span>
+                        <span style="font-size:22px;margin-top:-5px;">Tech</span>
+                    </div>
                 </div>
-                <div class="text-logo">
-                    <span>Local</span>
-                    <span>Service</span>
-                </div>
-            </div>
-            </a>
+                </a>
             <div class="title-service">
                 <h1>Plumbing Service</h1>
             </div>

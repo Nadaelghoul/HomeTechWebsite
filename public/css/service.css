@@ -82,32 +82,39 @@ header {
     box-shadow: var(--box-shadow-sm);
 }
 
-.container-logo {
+.logo-link{
+    text-decoration: none;
+}
+.logo-container {
     display: flex;
     align-items: center;
+    gap: 1rem;
+    position: relative;
+    padding: .4rem 0 0 2rem;
+    z-index: 15;
 }
 
-.imag-logo img {
-    width: 80px;
-    height: 80px;
+
+.logo-img img {
+    width: 65px;
+    height: 65px;
     object-fit: contain;
 }
 
-.text-logo span:first-letter {
-    color: var(--color-button);
-}
-
-.text-logo {
+.logo-text {
     display: flex;
     flex-direction: column;
-    font-weight: bold;
 }
 
-.text-logo span {
-    font-size: 1.5rem;
+.logo-text span {
+    font-size: 1.2rem;
+    font-weight: bold;
     color: var(--color-secondary);
 }
 
+.logo-text span:first-letter {
+    color: var(--color-primary);
+}
 .container-user {
     display: flex;
     align-items: center;

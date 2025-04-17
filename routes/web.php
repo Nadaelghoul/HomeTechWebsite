@@ -94,7 +94,7 @@ Route::get('/admin', function () {
 
 Route::post('/service-request/accept/{requestKey}', [ServiceRequestController::class, 'acceptRequest']) ->name('service-request.accept');
 Route::post('/service-toprequest/accept/{requestKey}', [TopProviderRequestController::class, 'acceptRequest']) ->name('service-toprequest.accept');
-Route::post('/service-toprequest/refuce/{requestKey}', [TopProviderRequestController::class, 'refuceRequest']) ->name('service-toprequest.refuce');
+Route::post('/top-provider-requests/refuse/{requestKey}', [TopProviderRequestController::class, 'refuse'])->name('top-provider-requests.refuse');
 
 Route::get('/check-pending', [RequestCheckController::class, 'checkPendingRequests']);
 

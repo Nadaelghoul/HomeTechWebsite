@@ -20,7 +20,7 @@ return new class extends Migration
             $table->enum('area', ['Al Manakh District','Al Zohour District','Al-talatini District','South District','East Port Said District','Al-dowahi District','West District']);
             $table->string('address');
             $table->date('execution_day');
-            $table->string('requirements');
+            $table->string('requirements')->nullable();
             $table->string('service');
             $table->string('skill');
             $table->string('price');

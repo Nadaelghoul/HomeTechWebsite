@@ -219,8 +219,8 @@
                                @csrf
                                <button type="submit" class="status Accepted" style="background-color: rgb(4, 64, 4);color:white">Accept</button>
                             </form>
-                            <form method="POST" action="{{ route('service-toprequest.refuce', $request->request_key) }}">
-                               @csrf
+                            <form  action="{{ route('top-provider-requests.refuse', $request->request_key) }}" method="POST">
+                                @csrf
                                <button type="submit" class="status Failed" style="background-color:rgb(194, 23, 23);color:white">Refuse</button>
                             </form>
                             </div>

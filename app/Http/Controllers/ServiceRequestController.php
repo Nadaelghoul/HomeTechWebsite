@@ -24,11 +24,11 @@ class ServiceRequestController extends Controller
         $validatedData = $request->validate([
             'name' => ['required','string','max:255','regex:/^[\p{L}\s]+$/u'],
             'email' => ['required','string','email','max:255' ],
-            'mobile' => 'required|digits_between:8,15',
+            'mobile' => ['required', 'regex:/^01[0-9]{9}$/'],
             'area' => 'required|in:Al Manakh District,Al Zohour District,Al-talatini District,South District,East Port Said District,Al-dowahi District,West District',
             'address' => 'required|string|max:255',
             'execution_day' => 'required|date|after_or_equal:today',
-            'requirements'=>'string|max:255',
+            'requirements' => ['nullable', 'regex:/^[\pL\s]+$/u', 'max:255'],
             'request_key'=>'string',
             'status'=>'in:pending, accepted, expired',
             'accepted_provider_id'=>'nullable',
@@ -36,6 +36,8 @@ class ServiceRequestController extends Controller
             'skill'=>'string',
             'price'=>'string',
 
+        ],[
+            'execution_day.after_or_equal' => 'You cannot select a date before today.',
         ]);
           // Generate a unique request key (8-character random string)
         $validatedData['request_key'] = strtoupper(substr(md5(uniqid()), 0, 8));

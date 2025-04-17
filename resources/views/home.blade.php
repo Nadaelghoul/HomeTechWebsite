@@ -18,14 +18,15 @@
 <body>
     <!-- Start Header -->
     <header>
-        <a class="logo-link" href="{{url('/home')}}">
-        <div class="logo-container">
-            <div class="logo-img">
+
+       <a class="logo-link" href="{{url('/home')}}">
+        <div class="logo-container" style="margin-left:-12px;">
+            <div class="logo-img" style="margin-left:5px;">
                 <img src="{{ asset('images/logo-removebg-preview.png') }}" alt=" Logo">
             </div>
-            <div class="logo-text">
-                <span>Local</span>
-                <span>Service</span>
+            <div class="logo-text"  style="margin-left:-20px;">
+                <span style="font-size:23px;">Home</span>
+                <span style="font-size:25px;">Tech</span>
             </div>
         </div>
         </a>
@@ -35,6 +36,26 @@
             <span></span>
         </button>
         <div class="nav-container">
+                         <!-- Sidebar Toggle Checkbox -->
+    <input type="checkbox" id="sidebar-toggle">
+    <!-- Sidebar -->
+    <div class="overlay"></div>
+    <aside id="sidebar">
+        <label for="sidebar-toggle" class="close-btn">&times;</label>
+        <div class="menu">
+            <div class="detal">
+                <br><a href="{{route('login')}}" style="text-decoration: none;"><i class="fa-solid fa-user-injured"></i>&nbsp;<p>service Provider</p></a><br>
+                <a href="{{url('/electrical')}}" style="text-decoration: none;"> <i class="fa-solid fa-screwdriver-wrench"></i>&nbsp;<p>Electrical Service</p></a><br>
+                <a href="{{url('/carpentry')}}" style="text-decoration: none;"> <i class="fa-solid fa-hammer"></i>&nbsp;<p>Carpentry Service</p></a><br>
+                <a href="{{url('/painting')}}" style="text-decoration: none;"> <i class="fa-solid fa-brush"></i>&nbsp;<p>Painting Service</p></a><br>
+                <a href="{{url('/plumbing')}}" style="text-decoration: none;"> <i class="fa-solid fa-faucet"></i>&nbsp;<p>Plumbing Service</p></a><br>
+                <a href="{{url('/airconditions')}}" style="text-decoration: none;"><img width="24" height="24" src="https://img.icons8.com/material/24/ffffff/air-conditioner.png" alt="air-conditioner"/>
+                    &nbsp;<p style="font-size: 13px; font-weight:bold">Air Conditioning Service</p></a><br>
+                <a href="{{url('/appliance')}}" style="text-decoration: none;"><img width="24" height="24" src="https://img.icons8.com/ios-filled/50/ffffff/fridge.png" alt="fridge"/>
+                    &nbsp;<p>Appliance Service</p></a><br>
+            </div>
+        </div>
+    </aside>
             <nav>
                 <ul>
                     <li><a href="{{url('/home')}}">Home</a></li>
@@ -43,9 +64,9 @@
                     <li><a href="#contact">Contact Us</a></li>
                     <li><a href="{{route('login')}}">Become a Pro</a></li>
                     <li><a href="{{url('/adminlogin')}}">Admin Panel</a></li>
+                    <li><label for="sidebar-toggle" class="icon-menu">&#9776;</label></li>
                 </ul>
             </nav>
-
         </div>
     </header>
     <!-- End Header -->
@@ -54,30 +75,11 @@
     <section class="hero">
         <div class="hero-content">
             <h1>
-                <span class="highlight">We</span> create the best service<br>
-                For <span class="highlight">Your</span> Help
+                <span class="highlight">Your</span>Trusted  <span class="highlight">place</span> to<br>
+                Find <span class="highlight">Skilled</span>&nbsp;Providers
             </h1>
-            <p>The easiy to get service with better price and quality<br>
-                Always ,think about your client</p>
-            <div class="search-bar">
-                <div class="search-input-container">
-                    <i class="fas fa-search"></i>
-                    <form action="{{ route('search.service') }}" method="GET">
-                    <input type="text" name="query" id="service" list="services" placeholder="What Service do you need?"  autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required oninput="this.setAttribute('list', 'services')" onfocus="this.removeAttribute('list')">
-                      <!-- Datalist for auto-suggestions -->
-                      <datalist id="services">
-                      <option value="electrical">
-                      <option value="plumbing">
-                      <option value="airconditiong">
-                      <option value="painting">
-                      <option value="carpentry">
-                      <option value="appliance">
-                     </datalist>
-                </div>
-                <button type="submit" class="search-button">Search</button>
-
-            </div>
-        </form>
+            <p>We're here to make getting service fast, easy, and reliable with reasonable price, thinking about our clients.<br>
+                Let's get started!</p>
 
         @if(session('error'))
          <p style="color: black">{{'*'. session('error') }}</p>
@@ -207,7 +209,7 @@
                 <div class="contact-details">
                     <div class="contact-address">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Port Said District, at Street</span>
+                        <span>Port Said District</span>
                     </div>
                     <div class="contact-email">
                         <i class="fas fa-envelope"></i>

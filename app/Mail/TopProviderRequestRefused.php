@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class RequestRefucedMail extends Mailable
+class TopProviderRequestRefused extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -25,19 +25,13 @@ class RequestRefucedMail extends Mailable
     public function build()
     {
 
-        // Fix path formatting and generate full URL
-        $photoPath = str_replace('\\', '/', $this->providerProfile->photo);
-        $fullPhotoUrl = url($photoPath);
-
         return $this->subject('Your Service Request Has Been Refuced')
-            ->view('emails.request_refuced')
+            ->view('emails.top_provider_refused')
             ->with([
                 'requestKey' => $this->topproviderrequest->request_key,
                 'service' => $this->topproviderrequest->service,
                 'skill' => $this->topproviderrequest->skill,
                 'providerName' => $this->provider->name,
-                'providerPhone' => $this->provider->phone,
-                'providerPhoto' => $fullPhotoUrl, // Ensure full URL for Gmail
             ]);
     }
 }
