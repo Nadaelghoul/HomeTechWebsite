@@ -52,12 +52,12 @@
 
     <!-- Start Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1 style="font-size:40px;">
-                <span class="highlight">There</span> are professionals<br>
-                 Ready to help <span class="highlight">You</span>
+        <div class="hero-content" style="margin-top:-30px;margin-left:15px;">
+            <h1 style="font-size:60px;">
+                <span class="highlight">Your</span>&nbsp;services at<br>
+                  &nbsp; &nbsp;Your <span class="highlight" style="font-size:50px;">Fingertips</span>
             </h1>
-            <p>The easiy to get service with better price and quality<br>
+            <p>Get services easily with the best price and quality<br>
                 Always,think about your client</p>
 
         @if(session('error'))
@@ -294,7 +294,10 @@
         </div>
     </footer>
     <!-- End Footer Section -->
-
+        <script src="{{ asset('js/main.js') }}" q></script>
+    <!-- ScrollReveal Library -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="{{ asset('js/scrollReveal.js') }}"></script>
 
 </body>
 

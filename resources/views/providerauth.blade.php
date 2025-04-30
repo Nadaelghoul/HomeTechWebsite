@@ -170,6 +170,8 @@
     </div> <!-- End Container -->
 
     <script src="{{ asset('js/auth.js') }}"></script> <!-- Adjust path if needed -->
+    <!-- ScrollReveal Library -->
+    <script src="https://unpkg.com/scrollreveal"></script>
 </body>
 
 </html>
