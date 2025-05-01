@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local Service</title>
+    <title>Home Tech</title>
     <!-- main stylesheet -->
     <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
     <!-- icon -->
@@ -118,11 +118,15 @@
                     @endphp
 
                     <p>
-                        @if(!empty($selectedSkills))
-                            {{ implode(', ', $selectedSkills) }}
-                        @else
-                            None
-                        @endif
+                        <ul class="checklist">
+                            @if(!empty($selectedSkills))
+                                @foreach($selectedSkills as $skill)
+                                    <li>{{ $skill }}</li>
+                                @endforeach
+                            @else
+                                <li>None</li>
+                            @endif
+                        </ul>
                     </p>
 
                       </div>

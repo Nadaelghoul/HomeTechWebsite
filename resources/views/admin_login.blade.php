@@ -21,7 +21,6 @@
 </head>
 <body>
     <div class="container">
-        <div class="container-login">
             <div class="aside2" >
                 <header>
 
@@ -35,7 +34,6 @@
                 <div class="form">
                     <form action="{{ route('admin.login.submit') }}" method="POST">
                         @csrf
-                        <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" name="username" id="username" placeholder="username" required>
                         <label for="pass">Password</label>
@@ -46,7 +44,6 @@
                         <div class="login_btn">
                             <button class="click">LOG IN</button>
                         </div>
-
                         </div>
                     </form>
                     @if ($errors->any())
@@ -56,11 +53,9 @@
                         @endforeach
                     </div>
                 @endif
-                </div>
-            </div>
-            </div>
         </div>
+     </div>
     </div>
-</div>
+     </div>
 </body>
 </html>

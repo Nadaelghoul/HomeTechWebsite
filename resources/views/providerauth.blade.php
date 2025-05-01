@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Authentication - Local Service</title>
+    <title>Authentication - Home Tech</title>
     <!-- Main authentication stylesheet -->
     <link rel="stylesheet" href="{{ asset('css/providerauth.css') }}"> <!-- Adjust path if needed -->
     <!-- Boxicons CDN -->
@@ -43,6 +43,13 @@
                     <i class='bx bxs-lock-alt'></i>
                 </div>
                 @error('password')<div style="color: red; font-size:13px;">{{'*'.$message }}</div>@enderror
+                <div class="input-group">
+                    <input type="password" name="password_confirmation" id="register-confirm-password" placeholder="Confirm Password">
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                @error('password_confirmation')
+                    <div style="color: red; font-size:13px;">{{ '*'.$message }}</div>
+                @enderror
                 <div class="input-group">
                     <input type="phone" name="phone" id="register-phone" value="{{ old('phone') }}" placeholder=" phone Number">
                     <i class='bx bxs-phone'></i>
@@ -142,7 +149,6 @@
                     @endforeach
                 </div>
              @endif
-                <a href="#" class="forgot-password">Forgot Your Password?</a>
                 <button type="submit" class="form-button">Log In</button>
                 <p class="mobile-toggle">Don't have an account? <a href="#register" id="mobile-register-link">Sign
                         Up</a></p>

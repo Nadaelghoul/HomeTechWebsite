@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local Service - Register</title>
+    <title>Home Tech - Register</title>
     <!-- Main stylesheet -->
     <link rel="stylesheet" href="{{ asset('CSS/servicerequest.css') }}">
     <!-- Font Awesome Icons -->

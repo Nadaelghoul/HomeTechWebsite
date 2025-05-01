@@ -608,3 +608,13 @@ button:hover{
 .notification-cardd h4{
     color: #1b5e20;
 }
+.checklist {
+    padding-left: 0;
+    list-style: none;
+}
+
+.checklist li::before {
+    content: '✔️';
+    margin-right: 8px;
+    color:var(--color-primary-darker);
+}

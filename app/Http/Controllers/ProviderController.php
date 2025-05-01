@@ -26,7 +26,7 @@ class ProviderController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => ['required','string','max:255','regex:/^[\p{L}\s]+$/u','regex:/^\s*\S+\s+\S+\s+\S+(\s+\S+)*\s*$/'],
             'email' => 'required|string|max:255|email|unique:providers,email',
-            'password' => 'required|string|min:8',
+            'password' => 'required|string|min:8|confirmed',
             'phone' => 'required|digits_between:8,15',
             'area' => 'required|in:Al Manakh District,Al Zohour District,Al-talatini District,South District,East Port Said District,Al-dowahi District,West District',
             'service' => 'required|in:Air Conditioning Service,Carpentry Service,Electrical Work Service,Appliance Service,Painting Service,Plumbing Service',
@@ -40,7 +40,7 @@ class ProviderController extends Controller
             return redirect()->back()
                 ->withErrors($validator)
                 ->withInput()
-                ->with('show_register', true); 
+                ->with('show_register', true);
         }
 
         // Create provider
