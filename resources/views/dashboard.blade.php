@@ -84,7 +84,7 @@
      <input type="checkbox" id="sidebar-toggle">
 
    <!-- Sidebar Toggle Button with Notification Badge -->
-    <label for="sidebar-toggle" class="icon-menu">  &#9776;</label>
+   &nbsp; &nbsp; &nbsp; <label for="sidebar-toggle" class="icon-menu">  &#9776;</label>
         <section class="stats-overview">
             <div class="stat-card">
                 <div class="card-header">

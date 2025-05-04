@@ -14,7 +14,6 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
     <!-- Start Header -->
     <header>
@@ -53,12 +52,90 @@
     <!-- Start Hero Section -->
     <section class="hero">
         <div class="hero-content" style="margin-top:-30px;margin-left:15px;">
-            <h1 style="font-size:60px;">
+            <h1 style="font-size:53px;">
                 <span class="highlight">Your</span>&nbsp;services at<br>
-                  &nbsp; &nbsp;Your <span class="highlight" style="font-size:50px;">Fingertips</span>
+                  &nbsp; &nbsp;Your <span class="highlight" style="font-size:45px;">Fingertips</span>
             </h1>
             <p>Get services easily with the best price and quality<br>
                 Always,think about your client</p>
+                 <div class="search-bar">
+                <div class="search-input-container">
+                    <i class="fas fa-search"></i>
+                    <form action="{{ route('search.service') }}" method="GET">
+                    <input type="text" name="query" id="service" list="services" placeholder="What Service do you need?"  autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required oninput="this.setAttribute('list', 'services')" onfocus="this.removeAttribute('list')">
+                    <datalist id="services">
+    <!-- Electrical Services -->
+    <option value="electrical">
+    <option value="wiring">
+    <option value="cabling">
+    <option value="lighting systems">
+    <option value="electrical panel installation">
+    <option value="alarm and home security systems">
+    <option value="electrician">
+
+    <!-- Plumbing Services -->
+    <option value="plumbing">
+    <option value="leak">
+    <option value="pipe">
+    <option value="drain">
+    <option value="sink">
+    <option value="faucet">
+    <option value="water">
+    <option value="fix leak">
+    <option value="repair leak">
+    <option value="unclog drain">
+    <option value="drain cleaning">
+    <option value="install sink">
+    <option value="replace faucet">
+    <option value="faucet replacement">
+
+    <!-- Air Conditioning Services -->
+    <option value="air conditioning">
+    <option value="air conditioner">
+    <option value="ac">
+    <option value="ac repair">
+    <option value="freon charging">
+    <option value="charging freon">
+    <option value="ac inspection">
+    <option value="dismantling air conditioning">
+    <option value="installing air conditioning">
+
+    <!-- Painting Services -->
+    <option value="painting">
+    <option value="interior wall painting">
+    <option value="exterior house painting">
+    <option value="cabinet refinishing">
+    <option value="decorative painting">
+    <option value="faux finish">
+    <option value="murals">
+    <option value="accent wall">
+
+    <!-- Carpentry Services -->
+    <option value="carpentry">
+    <option value="woodwork">
+    <option value="door installation">
+    <option value="door repair">
+    <option value="window framing">
+    <option value="window repair">
+    <option value="bedroom furniture assembly">
+    <option value="furniture assembly">
+    <option value="custom table">
+    <option value="table crafting">
+    <option value="table restoration">
+
+    <!-- Appliance Repair Services -->
+    <option value="appliance">
+    <option value="washing machine repair">
+    <option value="refrigerator repair">
+    <option value="water heater repair">
+    <option value="oven repair">
+</datalist>
+
+                     </div>
+                <button type="submit" class="search-button">Search</button>
+
+            </div>
+        </form>
 
         @if(session('error'))
          <p style="color: black">{{'*'. session('error') }}</p>
@@ -247,7 +324,7 @@
             <div class="footer-section">
                 <div class="footer-logo">
                     <img src="{{ asset('images/logo-removebg-preview.png') }}" alt="Local Service Logo">
-                    <h3>Local Service</h3>
+                    <h3>Home Tech</h3>
                 </div>
                 <p>Your trusted platform for professional home services and repairs. Quality work guaranteed.</p>
             </div>
@@ -290,11 +367,11 @@
                 <a href="{{ config('app.instagram_url') }}" target="_blank" ><i class="fab fa-instagram"></i></a>
                 <a href="{{ config('app.linkedin_url') }}"  target="_blank" ><i class="fab fa-linkedin-in"></i></a>
             </div>
-            <p>&copy; 2025 Local Service. All rights reserved.</p>
+            <p>&copy; 2025 Home Tech. All rights reserved.</p>
         </div>
     </footer>
     <!-- End Footer Section -->
-        <script src="{{ asset('js/main.js') }}" q></script>
+      <script src="{{ asset('js/main.js') }}"></script>
     <!-- ScrollReveal Library -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="{{ asset('js/scrollReveal.js') }}"></script>

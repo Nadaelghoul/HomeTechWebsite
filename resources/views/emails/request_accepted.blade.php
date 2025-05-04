@@ -22,6 +22,6 @@
 
     <p>The provider will contact you soon to confirm the execution time.</p>
 
-    <p>Best regards,<br>Local Services finder website Team</p>
+    <p>Best regards,<br>HomeTech website Team</p>
 </body>
 </html>

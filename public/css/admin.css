@@ -400,56 +400,24 @@ aside {
     position: relative;
     z-index: 1;
 }
-
-
-/* Responsive Adjustments */
-@media (max-width: 992px) {
-    .admin-container {
-        padding: var(--padding-lg);
-    }
-
-    .admin-title {
-        font-size: 2.2rem;
-    }
-
-    .stat-card {
-        flex-basis: calc(50% - var(--padding-lg) / 2);
-        /* Two cards per row */
-    }
-}
-
 @media (max-width: 768px) {
     .admin-title {
         font-size: 2rem;
     }
 
-    /* Table cells have slightly less padding */
     th,
     td {
         padding: var(--padding-sm) var(--padding-md);
     }
 
-    .stat-card .total {
+    .total {
+
         font-size: 1.8rem;
     }
 
-    .stat-card .card-title {
+    .card-title {
+
         font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .admin-container {
-        padding: var(--padding-md);
-    }
-
-    .stat-card {
-        flex-basis: 100%;
-        /* One card per row */
-    }
-
-    .admin-title {
-        font-size: 1.8rem;
     }
 
     .orders-section h2 {
@@ -459,15 +427,56 @@ aside {
 
     th,
     td {
-        font-size: 0.9rem;
-        /* Smaller font on very small screens */
+        font-size: 0.8rem;
         white-space: normal;
-        /* Allow text wrapping if absolutely necessary */
     }
 
     .status {
-        font-size: 0.8rem;
-        padding: calc(var(--padding-sm) - 2px) calc(var(--padding-md) - 4px);
+        font-size: 0.7rem;
+        padding: 0.3rem 0.5rem;
+        min-width: 80px;
+    }
+
+    td:first-child,
+    th:first-child {
+        padding-left: var(--padding-md);
+    }
+
+    td:last-child,
+    th:last-child {
+        padding-right: var(--padding-md);
+    }
+}
+
+    @media (max-width: 576px) {
+    .admin-container {
+      padding: var(--padding-md);
+    }
+
+   .stat-card {
+        height:8rem;
+        flex-basis:100%
+    }
+
+    .admin-title {
+        font-size: 1.4rem;
+        margin-top:10px;
+    }
+
+    .orders-section h2 {
+        font-size: 1.5rem;
+        padding: var(--padding-md);
+    }
+
+    th,
+    td {
+        font-size: 0.6rem;
+        white-space: normal;
+    }
+
+    .status {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.5rem;
         min-width: 80px;
     }
 

@@ -27,7 +27,7 @@
         <div class="form-box register">
             <form action="{{ route('register.store') }}"  method="POST" id="registerForm" enctype="multipart/form-data">
                 @csrf
-                <h1>Sign Up</h1>
+                   <h1>Sign Up</h1>
                 <div class="input-group">
                     <input type="text" name="name" id="register-name" value="{{ old('name') }}" placeholder=" Full Name">
                     <i class='bx bxs-user'></i>
@@ -44,11 +44,11 @@
                 </div>
                 @error('password')<div style="color: red; font-size:13px;">{{'*'.$message }}</div>@enderror
                 <div class="input-group">
-                    <input type="password" name="password_confirmation" id="register-confirm-password" placeholder="Confirm Password">
-                    <i class='bx bxs-lock-alt'></i>
+                <input type="password" name="password_confirmation" id="register-confirm-password" placeholder="Confirm Password">
+                <i class='bx bxs-lock-alt'></i>
                 </div>
                 @error('password_confirmation')
-                    <div style="color: red; font-size:13px;">{{ '*'.$message }}</div>
+                <div style="color: red; font-size:13px;">{{ '*'.$message }}</div>
                 @enderror
                 <div class="input-group">
                     <input type="phone" name="phone" id="register-phone" value="{{ old('phone') }}" placeholder=" phone Number">
@@ -178,6 +178,7 @@
     <script src="{{ asset('js/auth.js') }}"></script> <!-- Adjust path if needed -->
     <!-- ScrollReveal Library -->
     <script src="https://unpkg.com/scrollreveal"></script>
+
 </body>
 
 </html>

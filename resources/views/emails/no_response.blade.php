@@ -20,6 +20,6 @@
     <p>Thank you for using our website.</p>
 
     <p>Best regards,</p>
-    <p><strong>Local Service Finder website Team</strong></p>
+    <p><strong>HomeTech website Team</strong></p>
 </body>
 </html>

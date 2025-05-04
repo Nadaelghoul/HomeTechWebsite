@@ -13,6 +13,6 @@
 
     <p>The provider can not meet your requirements or he is busy in the choosen execution day , you can send request for public and you will recieve email if one of the providers accept it.</p>
 
-    <p>Best regards,<br>Local Services finder website Team</p>
+    <p>Best regards,<br>HomeTech website Team</p>
 </body>
 </html>
