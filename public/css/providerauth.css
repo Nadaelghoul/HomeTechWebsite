@@ -61,7 +61,7 @@ select:has(option[value="Appliance Service"]:checked)~.option4,
 select:has(option[value="Painting Service"]:checked)~.option5,
 select:has(option[value="Plumbing Service"]:checked)~.option6 {
     display: grid;
-     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     /* تحسين التنسيق باستخدام grid */
     gap: 8px;
     width: 100%;
@@ -70,9 +70,12 @@ select:has(option[value="Plumbing Service"]:checked)~.option6 {
 .skills_title {
     font-weight: bold;
     margin-bottom: 5px;
+    /* تقليل الهامش السفلي */
     color: #1b5e20;
     grid-column: 1 / -1;
     /* يمتد عبر جميع الأعمدة */
+    font-size: 0.85rem;
+    /* تصغير حجم الخط قليلاً */
 }
 
 .checkbox-group input[type="checkbox"]:focus,
@@ -86,8 +89,9 @@ input[type="checkbox"]:checked {
 .checkbox-group label {
     display: flex;
     align-items: center;
-    font-size: 11px;
-     white-space: normal;
+    font-size: 10px;
+    /* تصغير حجم الخط أكثر */
+    white-space: normal;
     margin-left: 0;
     /* إزالة الهامش السالب */
     width: auto;
@@ -95,7 +99,7 @@ input[type="checkbox"]:checked {
 }
 
 .checkbox-group input[type="checkbox"] {
-    margin-right:5px;
+    margin-right: 5px;
 }
 
 /* End Global Styles & Variables */
@@ -110,8 +114,8 @@ input[type="checkbox"]:checked {
     overflow: hidden;
     width: 100%;
     max-width: 890px;
-    min-height: 650px;
-    /* تم تعديلها من 820px إلى 650px */
+    min-height: 600px;
+    /* تم تعديلها من 650px إلى 600px لتقليل الارتفاع */
     margin: 20px 0;
     /* إضافة هامش للأعلى والأسفل */
 }
@@ -126,8 +130,8 @@ input[type="checkbox"]:checked {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 20px 40px;
-    /* تعديل التباعد الداخلي */
+    padding: 15px 35px;
+    /* تعديل التباعد الداخلي لتقليل المساحة */
     height: 100%;
     position: absolute;
     top: 0;
@@ -135,8 +139,8 @@ input[type="checkbox"]:checked {
     transition: all var(--transition-duration) var(--transition-timing);
     overflow-y: auto;
     /* إضافة خاصية التمرير عند الحاجة */
-    max-height: 650px;
-    /* تحديد أقصى ارتفاع */
+    max-height: 600px;
+    /* تحديد أقصى ارتفاع ليطابق الكونتينر */
 }
 
 .form-box form {
@@ -146,22 +150,23 @@ input[type="checkbox"]:checked {
     justify-content: flex-start;
     /* تغيير من center إلى flex-start */
     flex-direction: column;
-    padding: 20px 0;
-    /* إضافة تباعد داخلي */
+    padding: 15px 0;
+    /* تقليل التباعد الداخلي */
     width: 100%;
     height: auto;
     /* تغيير من 100% إلى auto */
     overflow-y: auto;
-    overflow-x:hidden;
-    /* إضافة خاصية التمرير عند الحاجة */
+    /* السماح بالتمرير داخل الفورم إذا تجاوز المحتوى */
+    overflow-x: hidden;
 }
 
 .form-box h1 {
     color: var(--color-primary-darker);
-    margin-bottom: 1rem;
-    /* Space below title */
+    margin-bottom: 0.8rem;
+    /* تقليل Space below title */
     font-weight: 600;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    /* تصغير حجم الخط */
     text-align: center;
     /* Center title */
 }
@@ -171,8 +176,8 @@ input[type="checkbox"]:checked {
     background-color: var(--color-input-background);
     border: none;
     border-radius: var(--border-radius-md);
-    margin: 5px 0;
-    /* تقليل الهامش */
+    margin: 4px 0;
+    /* تقليل الهامش أكثر */
     width: 100%;
     display: flex;
     align-items: center;
@@ -182,17 +187,17 @@ input[type="checkbox"]:checked {
     background-color: transparent;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 12px;
-    /* Add a bit more space for select groups */
+    margin-top: 10px;
+    /* تقليل Add a bit more space for select groups */
 }
 
 .input-group.select-group label {
     font-weight: 500;
-    margin-bottom: 0.4rem;
-    /* Slightly less margin */
+    margin-bottom: 0.3rem;
+    /* تقليل Slightly less margin */
     color: var(--color-secondary);
-    font-size: 0.85rem;
-    /* Slightly smaller label */
+    font-size: 0.8rem;
+    /* تصغير Slightly smaller label */
     display: block;
     padding-left: 5px;
     /* Small indent */
@@ -202,8 +207,8 @@ input[type="checkbox"]:checked {
     background-color: var(--color-input-background);
     border-radius: var(--border-radius-md);
     border: none;
-    padding: 13px 15px;
-    /* Adjust padding to match inputs */
+    padding: 12px 15px;
+    /* تقليل Adjust padding to match inputs */
 }
 
 .input-group i {
@@ -212,9 +217,16 @@ input[type="checkbox"]:checked {
     top: 50%;
     transform: translateY(-50%);
     color: var(--color-text-light);
-    font-size: 1rem;
-    pointer-events: none;
+    font-size: 0.9rem;
+
     z-index: 2;
+}
+
+.input-group i.password-toggle {
+    right: 15px;
+    left: auto;
+    z-index: 1000;
+    cursor: pointer;
 }
 
 .input-group input,
@@ -222,13 +234,21 @@ input[type="checkbox"]:checked {
     background: none;
     border: none;
     outline: none;
-    padding: 13px 15px 13px 45px;
-    /* Adjusted padding for consistency */
+    padding: 12px 15px 12px 40px;
+    /* تقليل Adjusted padding for consistency, left padding for icon */
     width: 100%;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    /* تصغير حجم الخط */
     color: var(--color-text);
     border-radius: var(--border-radius-md);
 }
+
+/* مساحة لأيقونة العين في حقول كلمة المرور */
+.input-group input[type="password"] {
+    padding-right: 40px;
+    /* Add padding for the toggle icon */
+}
+
 
 .input-group select {
     color: var(--color-text-light);
@@ -236,8 +256,8 @@ input[type="checkbox"]:checked {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23666' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 1rem center;
-    background-size: 0.8em;
-    /* Smaller arrow */
+    background-size: 0.7em;
+    /* تصغير Smaller arrow */
     padding-right: 2.5rem;
     cursor: pointer;
 }
@@ -254,15 +274,17 @@ input[type="checkbox"]:checked {
 .input-group input::placeholder {
     color: var(--color-text-light);
     font-weight: 400;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    /* تصغير حجم الخط */
 }
 
 .forgot-password {
     color: var(--color-secondary);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    /* تصغير حجم الخط */
     text-decoration: none;
-    margin: 12px 0 15px;
-    /* Adjusted margin */
+    margin: 10px 0 12px;
+    /* تقليل Adjusted margin */
     align-self: flex-end;
     /* Align to the right */
     padding-right: 5px;
@@ -275,15 +297,19 @@ input[type="checkbox"]:checked {
 .form-button {
     background-color: var(--color-primary-dark);
     color: var(--color-background);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    /* تصغير حجم الخط */
     font-weight: 600;
-    padding: 12px 45px;
+    padding: 10px 40px;
+    /* تقليل Padding */
     border: none;
     border-radius: var(--border-radius-md);
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    margin-top: 15px;
-    margin-bottom: 10px;
+    margin-top: 12px;
+    /* تقليل Margin */
+    margin-bottom: 8px;
+    /* تقليل Margin */
     cursor: pointer;
     transition: transform 80ms ease-in;
     width: auto;
@@ -332,7 +358,7 @@ input[type="checkbox"]:checked {
     color: var(--color-text-on-dark);
     position: relative;
     left: -100%;
-    height: 100%;
+    /* height: 100%; -- مكررة */
     width: 200%;
     transform: translateX(0);
     transition: all var(--transition-duration) var(--transition-timing);
@@ -460,8 +486,10 @@ input[type="checkbox"]:checked {
 .mobile-toggle {
     display: none;
     /* Hidden by default on desktop */
-    margin-top: 1.5rem;
-    font-size: 0.9rem;
+    margin-top: 1.2rem;
+    /* تقليل */
+    font-size: 0.85rem;
+    /* تصغير */
     color: var(--color-text-light);
 }
 
@@ -496,7 +524,8 @@ input[type="checkbox"]:checked {
         position: relative;
         left: auto;
         top: auto;
-        padding: 30px 20px;
+        padding: 25px 15px;
+        /* تعديل */
         min-height: auto;
         max-height: none;
         transform: none !important;
@@ -528,8 +557,10 @@ input[type="checkbox"]:checked {
     }
 
     .form-box h1 {
-        font-size: 1.6rem;
-        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        /* تعديل */
+        margin-bottom: 0.8rem;
+        /* تعديل */
     }
 
     .form-button {
@@ -562,32 +593,49 @@ input[type="checkbox"]:checked {
 }
 
 @media (max-width: 480px) {
+    body {
+        padding: 0;
+        /* إزالة الـ padding في الشاشات الصغيرة جداً */
+    }
+
     .container {
         margin: 0;
         border-radius: 0;
     }
 
     .form-box {
-        padding: 20px 15px;
+        padding: 20px 10px;
+        /* تعديل */
     }
 
     .input-group input,
     .input-group select {
-        padding: 12px 15px 12px 40px;
-        font-size: 0.85rem;
+        padding: 11px 15px 11px 35px;
+        /* تعديل */
+        font-size: 0.8rem;
+        /* تعديل */
     }
 
+    .input-group input[type="password"] {
+        padding-right: 35px;
+        /* تعديل */
+    }
+
+
     .input-group.select-group select {
-        padding: 12px 15px;
+        padding: 11px 15px;
+        /* تعديل */
     }
 
     .form-button {
         padding: 10px;
-        font-size: 0.85rem;
+        font-size: 0.8rem;
+        /* تعديل */
     }
 
     .mobile-toggle {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
+        /* تعديل */
     }
 
     .checkbox-group label {
@@ -603,5 +651,7 @@ input[type="checkbox"]:checked {
         grid-template-columns: 1fr;
     }
 }
+
+
 
 /* End Responsive Styles */

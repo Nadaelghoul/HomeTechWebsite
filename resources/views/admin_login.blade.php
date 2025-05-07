@@ -37,7 +37,10 @@
                         <label for="username">Username</label>
                         <input type="text" name="username" id="username" placeholder="username" required>
                         <label for="pass">Password</label>
-                        <input type="password" name="password" id="pass" placeholder="Please enter your password"required>
+                         <div class="password-field">
+                         <input type="password" name="password" id="pass" placeholder="Please enter your password" required>
+                         <i class='bx bxs-hide password-toggle' onclick="togglePassword('pass', this)"></i>
+                         </div>
                         @if(session('error'))
                         <div>{{'*'. session('error') }}</div>
                         @endif
@@ -57,5 +60,24 @@
      </div>
     </div>
      </div>
+    <script>
+    function togglePassword(inputId, icon) {
+        const passwordInput = document.getElementById(inputId);
+
+        if (passwordInput.type === 'password') {
+            // Change to text to show password
+            passwordInput.type = 'text';
+            // Change icon to "show" icon
+            icon.classList.remove('bxs-hide');
+            icon.classList.add('bxs-show');
+        } else {
+            // Change back to password to hide
+            passwordInput.type = 'password';
+            // Change icon back to "hide" icon
+            icon.classList.remove('bxs-show');
+            icon.classList.add('bxs-hide');
+        }
+    }
+</script>
 </body>
 </html>

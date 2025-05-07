@@ -116,6 +116,22 @@ input::placeholder{
     box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
 }
 
+.password-field {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+}
+
+.password-toggle {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        z-index: 10;
+}
+
+
 /* Button Styles */
 .login_btn {
     text-align: center;
@@ -204,4 +220,3 @@ input::placeholder{
         font-size: 0.95rem;
     }
 }
-
