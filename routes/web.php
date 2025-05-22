@@ -59,6 +59,7 @@ Route::post('/proauth/register', [ProviderController::class, 'register'])->name(
 Route::get('/proauth/login', [ProviderController::class, 'showLoginForm'])->name('login');
 Route::post('/proauth/login', [ProviderController::class, 'login'])->name('login.submit');
 Route::post('/logout', [ProviderController::class, 'logout'])->middleware('auth:provider')->name('provider.logout');
+Route::post('/delete',[ProviderController::class, 'delete_account'])->name('delete');
 
 Route::middleware('auth:provider')->group(function () {
     Route::get('/profile/{id}', [ProviderController::class, 'showProfile'])->name('provider.profile');

@@ -467,6 +467,7 @@
     </div> <!-- End Container -->
 
     <script src="{{ asset('js/auth.js') }}"></script> <!-- Adjust path if needed -->
+    <script src="{{asset('js/validationmessages.js')}}"></script>
     <!-- ScrollReveal Library -->
    <script src="https://unpkg.com/scrollreveal"></script>
     <script>

@@ -41,7 +41,7 @@
                     <li><a href="#start-services">Services</a></li>
                     <li><a href="#advantages">About</a></li>
                     <li><a href="#contact">Contact Us</a></li>
-                    <li><a href="{{route('login')}}">Become a Pro</a></li>
+                    <li><a href="{{route('login')}}">Become provider</a></li>
                     <li><a href="{{url('/adminlogin')}}">Admin Panel</a></li>
                 </ul>
             </nav>
@@ -159,7 +159,7 @@
                     <li>Replace a faucet</li>
                     <li>Install a new sink</li>
                 </ul>
-                <p class="price">$225.00/Visit</p>
+
                 <button> <a class="serv-page" href="{{url('/plumbing')}}">Get The Service</a></button>
             </div>
 
@@ -172,7 +172,7 @@
                     <li>Replace a door handle</li>
                     <li>Install new cabinets</li>
                 </ul>
-                <p class="price">$125.00/Visit</p>
+
                 <button> <a class="serv-page" href="{{url('/carpentry')}}">Get The Service</a></button>
             </div>
 
@@ -185,7 +185,7 @@
                     <li>Check the wiring</li>
                     <li>Install new switches</li>
                 </ul>
-                <p class="price">$275.00/Visit</p>
+
                 <button> <a class="serv-page" href="{{url('/electrical')}}">Get The Service</a></button>
             </div>
 
@@ -198,7 +198,7 @@
                     <li>Sand the surface</li>
                     <li>Remove old paint</li>
                 </ul>
-                <p class="price">$425.00/Visit</p>
+
                 <button> <a class="serv-page" href="{{url('/painting')}}">Get The Service</a></button>
             </div>
 
@@ -211,7 +211,7 @@
                     <li>Install an air conditioner</li>
                     <li>Replace air filters</li>
                 </ul>
-                <p class="price">$275.00/Visit</p>
+
                 <button> <a class="serv-page" href="{{url('/airconditions')}}">Get The Service</a></button>
             </div>
             <div class="service-card">
@@ -223,7 +223,7 @@
                     <li>Replace a microwave fuse</li>
                     <li>Repair the washing machine</li>
                 </ul>
-                <p class="price">$325.00/Visit</p>
+
                 <button> <a class="serv-page" href="{{url('/appliance')}}">Get The Service</a></button>
             </div>
         </div>
@@ -335,7 +335,7 @@
                     <li><a href="#start-services">Our Services</a></li>
                     <li><a href="#advantages">About Us</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="{{route('login')}}">Become a Pro</a></li>
+                    <li><a href="{{route('login')}}">Become Provider</a></li>
                 </ul>
             </div>
 

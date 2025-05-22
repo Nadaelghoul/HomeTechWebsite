@@ -24,15 +24,17 @@ class ProviderController extends Controller
     public function register(Request $request) {
         // Step 1: Manually validate so we can control the redirect
         $validator = Validator::make($request->all(), [
-            'name' => ['required','string','max:255','regex:/^[\p{L}\s]+$/u','regex:/^\s*\S+\s+\S+\s+\S+(\s+\S+)*\s*$/'],
-            'email' => 'required|string|max:255|email|unique:providers,email',
-            'password' => 'required|string|min:8|confirmed',
-            'phone' => 'required|digits_between:8,15',
+            'name' => ['required','string','max:255','regex:/^[\p{L}\s]+$/u','regex:/^[A-Za-z]+\s+[A-Za-z]+\s+[A-Za-z]+$/'],
+            'email' => 'required|string|max:255|email',
+            'password' => ['required','regex:/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$/','min:8','confirmed'],
+            'phone' => ['required','regex:/^\d{11}$/'],
             'area' => 'required|in:Al Manakh District,Al Zohour District,Al-talatini District,South District,East Port Said District,Al-dowahi District,West District',
             'service' => 'required|in:Air Conditioning Service,Carpentry Service,Electrical Work Service,Appliance Service,Painting Service,Plumbing Service',
-            'skills' => 'nullable|array',
+            'skills' => 'required|array|min:1',
         ], [
             'name.regex' => 'name must be your first, middle and last name.',
+            'skills.required' => 'Please choose at least one skill.',
+            'skills.min' => 'Please choose at least one skill.',
         ]);
 
         // Check validation
@@ -255,14 +257,23 @@ foreach (['name', 'email', 'phone', 'area', 'service', 'skills'] as $field) {
             // Check if provider is authenticated
             $provider = Auth::guard('provider')->user();
 
+            // Logout the provider
+            Auth::guard('provider')->logout();
+
+            // Redirect to login page
+            return redirect()->route('login.submit');
+        }
+
+        public function delete_account(Request $request)
+        {
+            // Check if provider is authenticated
+            $provider = Auth::guard('provider')->user();
+
               // Delete profile first
             DB::delete('DELETE FROM profiles WHERE provider_id = ?', [$provider->id]);
 
            // Delete provider
             DB::delete('DELETE FROM providers WHERE id = ?', [$provider->id]);
-
-            // Logout the provider
-            Auth::guard('provider')->logout();
 
             // Redirect to login page
             return redirect()->route('login.submit');
